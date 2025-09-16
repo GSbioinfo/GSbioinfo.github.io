@@ -6,65 +6,53 @@
 <title>Gajendra Suryawanshi (PhD)</title>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <style>
+    /* Global Styles */
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
         font-family: 'Roboto', sans-serif;
         color: #333;
-        background-image: url('SCRT_personal_cover_copy.png');
-        background-size: cover;
-        background-attachment: fixed;
-        background-position: center;
         min-height: 100vh;
         position: relative;
+        overflow-x: hidden;
     }
 
-    /* Overlay for subtle effect */
+    /* Animated background overlay */
+    body::before {
+        content: '';
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: linear-gradient(-45deg, #1a237e, #1976d2, #64b5f6, #bbdefb);
+        background-size: 400% 400%;
+        animation: gradientBG 15s ease infinite;
+        z-index: -2;
+    }
+
+    @keyframes gradientBG {
+        0% {background-position:0% 50%;}
+        50% {background-position:100% 50%;}
+        100% {background-position:0% 50%;}
+    }
+
     body::after {
         content: '';
         position: fixed;
         top:0; left:0;
         width:100%; height:100%;
-        background-color: rgba(255,255,255,0.85);
+        background-image: url('SCRT_personal_cover_copy.png');
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        opacity: 0.15;
         z-index: -1;
-    }
-
-    /* Sticky navigation bar */
-    nav {
-        position: sticky;
-        top: 0;
-        width: 100%;
-        background-color: rgba(255,255,255,0.95);
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        z-index: 100;
-        display: flex;
-        justify-content: center;
-    }
-
-    nav ul {
-        list-style: none;
-        display: flex;
-        padding: 15px;
-    }
-
-    nav li {
-        margin: 0 20px;
-    }
-
-    nav a {
-        text-decoration: none;
-        font-weight: bold;
-        color: #1a237e;
-        transition: color 0.3s;
-    }
-
-    nav a:hover {
-        color: #007bff;
     }
 
     header {
         text-align: center;
-        padding: 80px 20px 40px 20px;
+        padding: 80px 20px;
+        background-color: rgba(255,255,255,0.85);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
 
     header h1 { font-size: 3em; color: #1a237e; margin-bottom: 10px; }
@@ -92,7 +80,7 @@
         margin: 40px auto;
         padding: 40px 30px;
         border-radius: 12px;
-        background-color: rgba(255,255,255,0.95);
+        background-color: rgba(255,255,255,0.9);
         box-shadow: 0 8px 20px rgba(0,0,0,0.12);
         transition: transform 0.3s, box-shadow 0.3s;
     }
@@ -108,7 +96,7 @@
     footer {
         text-align: center;
         padding: 40px 20px;
-        background-color: rgba(255,255,255,0.95);
+        background-color: rgba(255,255,255,0.9);
         font-size: 1em;
         color: #333;
     }
@@ -122,26 +110,19 @@
 
     footer a:hover { transform: scale(1.1); }
 
+    /* Social Badge Icons */
     .social-icon {
         width: 32px;
         height: 32px;
         display: inline-block;
         vertical-align: middle;
     }
+
 </style>
 </head>
 <body>
 
-<!-- Sticky Navbar -->
-<nav>
-    <ul>
-        <li><a href="#about">About Me</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-</nav>
-
-<header id="about">
+<header>
     <h1>Gajendra Suryawanshi, PhD</h1>
     <p>Bioinformatics | Computational Biology | Assay Innovation</p>
     <div class="buttons">
@@ -149,12 +130,12 @@
     </div>
 </header>
 
-<!-- Projects Section -->
+<!-- Projects -->
 <section id="projects">
     <h2><a href="https://github.com/GSbioinfo/scEDIT" target="_blank">scDNA-seq analysis of CRISPR edited cells</a></h2>
-    <p>This repo contains a software tool and Dockerfiles for analysis of single-cell CRISPR editing data generated on the Tapestri platform.
-       Also provided are R scripts for analysis visualization, and python scripts for testing Machine learning models
-    </p>
+    <p>his repo contains a software tool and Dockerfiles for analysis of single-cell CRISPR editing data generated on the Tapestri platform.
+       Also provided are R scripts for analysis visualization, and python scripts for testing Machine learning models.
+</p>
 </section>
 
 <section>
@@ -172,7 +153,7 @@
     <p>This repository contains R scripts and Dockerfiles for single-cell analysis of human bone marrow CD34 cells. <a href="https://github.com/GSbioinfo/HSPC_SingleCellAnalysis" target="_blank">HSPC data analysis</a> for details.</p>
 </section>
 
-<footer id="contact">
+<footer>
     <p>Connect with me: 
         <a href="https://www.linkedin.com/in/gajendra-suryawanshi-ph-d-227001179/" target="_blank">
             <img class="social-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn">
